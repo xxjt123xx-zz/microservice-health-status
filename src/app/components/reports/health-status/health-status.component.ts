@@ -19,12 +19,12 @@ export class HealthStatusComponent implements OnInit {
       {
         env: "prod",
         checks: [
-          { name: "Service 1 - Good", status: "Good", plots: [1, 2, 3, 4, 5] },
-          { name: "Test2", status: "Info", plots: [ 651 , 501 , 100 , 308 , 149 ] },
-          { name: "Test3", status: "Warning", plots: [ 219 , 513 , 497 , 610 , 112 ] },
-          { name: "Test4", status: "Critical", plots: [ 321 , 634 , 104 , 997 , 208 ] },
-          { name: "Service 1 - Good", status: "Good", plots: [ 219 , 513 , 497 , 610 , 112 ] },
-          { name: "Test2", status: "Info", plots: [ 121 , 264 , 634 , 398 , 518 ] } ,
+          { name: "Service 1 - Good", icon: "fa fa-check-circle", status: "Good", plots: [1, 2, 3, 4, 5] },
+          { name: "Test2", icon: "fa fa-info-circle", status: "Info", plots: [ 651 , 501 , 100 , 308 , 149 ] },
+          { name: "Test3", icon: "fa fa-exclamation-triangle", status: "Warning", plots: [ 219 , 513 , 497 , 610 , 112 ] },
+          { name: "Test4", icon: "fa fa-times-circle", status: "Critical", plots: [ 321 , 634 , 104 , 997 , 208 ] },
+          { name: "Service 1 - Good", icon: "fa fa-check-circle", status: "Good", plots: [ 219 , 513 , 497 , 610 , 112 ] },
+          { name: "Test2", icon: "fa fa-info-circle", status: "Info", plots: [ 121 , 264 , 634 , 398 , 518 ] } ,
         ],
       },
       {

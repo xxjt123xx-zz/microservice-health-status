@@ -1,19 +1,81 @@
-<table class="table table-sm table-hover table-striped">
-	<thead>
-		<tr>
-			<th scope="col">Check</th>
-			<th scope="col">Status</th>
-			<th scope="col">Trend</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr *ngFor="let check of prodChecks">
-			<td scope="row" style="width: 200px">{{ check?.name }}</td>
-			<td>
-			</td>
-			<td>
-				<app-sparkline [name]="check?.name" [data]="check?.plots"></app-sparkline>
-			</td>
-		</tr>
-	</tbody>
-</table>
+<ul ngbNav #nav="ngbNav" class="nav-tabs">
+  <li ngbNavItem>
+    <a ngbNavLink>Prod</a>
+    <ng-template ngbNavContent>
+      <table class="table table-sm table-hover table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Check</th>
+            <th scope="col">Status</th>
+            <th scope="col">Trend</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let check of prodChecks">
+            <td scope="row" style="width: 200px">{{ check?.name }}</td>
+            <td><i class="{{ check?.icon }}"></i></td>
+            <td>
+              <app-sparkline
+                [name]="check?.name"
+                [data]="check?.plots"
+              ></app-sparkline>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </ng-template>
+  </li>
+  <li ngbNavItem>
+    <a ngbNavLink>Test</a>
+    <ng-template ngbNavContent>
+      <table class="table table-sm table-hover table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Check</th>
+            <th scope="col">Status</th>
+            <th scope="col">Trend</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let check of testChecks">
+            <td scope="row" style="width: 200px">{{ check?.name }}</td>
+            <td></td>
+            <td>
+              <app-sparkline
+                [name]="check?.name"
+                [data]="check?.plots"
+              ></app-sparkline>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </ng-template>
+  </li>
+  <li ngbNavItem>
+    <a ngbNavLink>Dev</a>
+    <ng-template ngbNavContent>
+      <table class="table table-sm table-hover table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Check</th>
+            <th scope="col">Status</th>
+            <th scope="col">Trend</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let check of devChecks">
+            <td scope="row" style="width: 200px">{{ check?.name }}</td>
+            <td></td>
+            <td>
+              <app-sparkline
+                [name]="check?.name"
+                [data]="check?.plots"
+              ></app-sparkline>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </ng-template>
+  </li>
+</ul>
+<div [ngbNavOutlet]="nav"></div>
