@@ -53,4 +53,9 @@ export class HealthStatusComponent implements OnInit {
     this.testChecks = this.checks.find((f) => f.env === "test")?.checks;
     this.devChecks = this.checks.find((f) => f.env === "dev")?.checks;
   }
+
+  // getStatusIcon(status:string) : string {
+  //   if()
+  //   return "fa fa-info-circle"
+  // }
 }
